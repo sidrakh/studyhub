@@ -1,0 +1,26 @@
+
+.navbar {
+  background: #916BBF;
+  padding: 0.5rem 0 0;
+  margin: 0 0 2rem;
+}
+
+.navbar:hover {
+  background: #C996CC;
+}
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+#footer{
+  background-color: #FFC0D3;
+  padding: 2% 0%;
+  text-align: center;
+  width: -webkit-fill-available;
+  font-family: 'Lobster Two', cursive;
+
+}
+.footer-icon {
+  margin: 20px 30px;
+}

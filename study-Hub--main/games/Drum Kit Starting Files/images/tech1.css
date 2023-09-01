@@ -1,0 +1,247 @@
+.menu-icon {
+    height: 30px;
+    width: 45px;
+    position: absolute;
+    z-index: 30;
+    left: 2vw;
+    font-size: 2rem;
+    color:white;
+    top: 4.5vh;
+    cursor: pointer;
+    background-image: url(../../../p22assets/common/navLogoWhite.png);
+    background-size: cover;
+    transition: all .3s ease-in;
+}
+
+.menu-icon.black {
+	background-image: url(../../../p22assets/common/navLogoBlack.png);
+}
+
+.plus-icon {
+	height: 70px;
+	width: 70px;
+	z-index: 3;
+	cursor: pointer;
+	background-image: url(../images/plus.png);
+	background-size: contain;
+	transition: all 0.1s ease-in;
+}
+
+/* line 25, ../sass/burger.scss */
+.menu-icon__line {
+	height: 2px;
+	width: 30px;
+	display: block;
+	background-color: black;
+	margin-bottom: 4px;
+	transition: transform 0.2s ease, background-color 0.5s ease;
+}
+
+/* line 33, ../sass/burger.scss */
+.menu-icon__line-left {
+	width: 15px;
+}
+
+/* line 36, ../sass/burger.scss */
+.menu-icon__line-right {
+	width: 15px;
+	float: right;
+}
+
+body.nav-active .menu-icon__line {
+	background-color: #ffffff;
+	transform: translateX(0px) rotate(-45deg);
+}
+
+/* line 112, ../sass/burger.scss */
+body.nav-active .menu-icon__line-left {
+	transform: translateX(1px) rotate(45deg);
+}
+
+/* line 115, ../sass/burger.scss */
+body.nav-active .menu-icon__line-right {
+	transform: translateX(-2px) rotate(45deg);
+}
+body.nav-active .menu-icon {
+	background-image: url(../../../p22assets/common/navLogoWhite.png);
+	transform: rotate(90deg) scale(0.5);
+}
+body.menu-active .plus-icon {
+	transform: rotate(45deg);
+}
+body.menu-active .menu-items-container {
+	visibility: visible;
+}
+/* body.nav-active .social-media{
+    visibility: visible;
+} */
+
+.upper-sidenav {
+    height: 100vh;
+    width: 0;
+    max-width: 300px;
+    position: fixed;
+    z-index: 25;
+    padding-bottom: 1.5rem;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    overflow-x: hidden;
+    /* padding-top: 10vh; */
+    transition: 0.5s;
+    font-size: 0.9em;
+}
+
+#mySidenavInner {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+}
+
+/* The navigation menu links */
+.upper-sidenav a {
+	/* padding: 8px 8px 8px 8px; */
+	margin-left: 2vw;
+	text-decoration: none;
+	font-size: 1.5em;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #ffffff;
+	display: block;
+	transition: 0.3s;
+	text-align: left;
+}
+
+.upper-sidenav a {
+	position: relative;
+	padding: 0.5rem 0.5rem;
+	/* margin-left: 2vw; */
+	text-decoration: none;
+	font-size: 1.2rem;
+	font-family: "Poppins";
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+	text-align: center;
+	text-transform: uppercase;
+	display: block;
+	margin: 0.25rem auto;
+}
+
+.upper-sidenav a:hover {
+	color: #ffffff;
+	font-weight: 600;
+	font-size: 1.3rem;
+}
+
+.upper-sidenav a:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 1px;
+	bottom: -1px;
+	left: 0;
+	background-color: #818181aa;
+	transform-origin: bottom right;
+	transition: transform 0.25s ease-out, height 0.2s;
+	border-radius: 2px;
+}
+
+.upper-sidenav a:after:hover {
+	height: 4px;
+}
+
+.upper-sidenav a:hover:after {
+	transform: scaleX(1);
+	transform-origin: bottom left;
+	height: 3px;
+	background-color: #ffffff;
+}
+
+#nav_logo {
+	/* z-index: 2; */
+	transform: none;
+	position: absolute;
+	top: 4vh;
+	left: calc(100vw - 210px - 2vw);
+}
+
+#nav_logo_image {
+	content: url("../../../p22assets/common/MainLogo22White.png");
+	width: 210px;
+	height: 70px;
+}
+
+#nav_logo_image.black {
+	content: url("../../../p22assets/common/MainLogo22Black.png");
+}
+
+/* When you mouse over the navigation links, change their color */
+.upper-sidenav a:hover,
+.offcanvas a:focus {
+	color: #f1f1f1;
+	transform: scale(1.1);
+}
+
+/* Position and style the close button (top right corner) */
+.upper-sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+body.nav-active #mySidenav {
+	padding-top: 100px;
+	width: 60vw;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+	transition: margin-left 0.5s;
+	padding: 20px;
+}
+
+@media screen and (max-height: 550px) {
+	.upper-sidenav {
+		height: 100%;
+	}
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-width: 768px) {
+	body.nav-active #mySidenav {
+		width: 60vw;
+	}
+
+	#nav_logo {
+		left: calc(100vw - 150px - 1vw);
+	}
+
+	#nav_logo_image {
+		width: 150px;
+		height: 50px;
+	}
+  .menu-icon{
+    font-size: 1.5rem;
+  }
+
+	.details-wrapper {
+		/*padding-top: calc(4vh + 50px);*/
+	}
+
+	.upper-sidenav a {
+		font-size: 18px;
+	}
+	.plus-icon {
+		height: 35px;
+		width: 35px;
+	}
+
+	body.nav-active .menu-icon {
+		transform: rotate(90deg) scale(0.8);
+	}
+}

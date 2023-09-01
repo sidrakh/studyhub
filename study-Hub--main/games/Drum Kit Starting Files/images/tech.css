@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@font-face {
+  font-family: "Equinox";
+  src: url("../fonts/Equinox Bold.otf");
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+#overlay {
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+}
+
+#overlay.active {
+  display: block;
+  z-index: 1;
+}
+
+/* Strucutre */
+.landing-wrapper {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background: #0f120f;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-nav-bar {
+  z-index: 15;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 20vh;
+  /* align-items: flex-end; */
+  box-sizing: border-box;
+}
+
+.landing-globe-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  flex-direction: column;
+}
+
+#metaverse-link {
+  font-size: 2em;
+  width: 20%;
+  letter-spacing: 10px;
+  padding: 0;
+  text-align: center;
+  margin-top: 50px;
+  border: white solid;
+}
+
+#metaverse-link a {
+  text-decoration: none;
+  color: white;
+}
+
+.landing-footer {
+  z-index: 15;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  height: 20vh;
+}
+
+/* Globe stuff */
+.landing-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  font-size: 4em;
+  color: #9cc9df;
+  font-family: "Equinox";
+  z-index: 20;
+  -webkit-touch-callout: none;
+  user-select: none;
+  /* Note: keep these 2 values same */
+  letter-spacing: 0.8em;
+  padding-left: 2em;
+}
+
+.landing-globe {
+  height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* Nav Bar Stuff */
+.landing-left-menu {
+  visibility: hidden;
+  z-index: -1;
+}
+
+.landing-left-menu,
+.landing-right-menu {
+  padding: 2em;
+  width: 10%;
+  color: white;
+}
+
+#landing-menu-icon {
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+}
+
+.landing-right-menu-icon {
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.landing-right-menu-icon i {
+  transition: 0.5s;
+}
+
+.landing-right-menu {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.landing-right-menu-list {
+  position: absolute;
+  width: 25vw;
+  text-align: right;
+  right: 0;
+  padding: 0;
+  margin-top: 2em;
+  font-size: 1.5vw;
+  font-family: Poppins;
+  text-transform: uppercase;
+  height: 0;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+.landing-right-menu-list-item {
+  padding: 0.25em 0;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+
+.landing-right-menu-list-item:hover {
+  transform: scale(1.1);
+}
+
+/* Footer stuff  */
+.landing-credits {
+  color: white;
+  font-family: Poppins;
+  box-sizing: border-box;
+  padding: 2em;
+  width: 50%;
+  text-transform: uppercase;
+}
+
+.landing-credits a {
+  color: white;
+  font-family: Poppins;
+  text-decoration: none;
+}
+
+.landing-credits i {
+  color: rgb(247, 101, 101);
+  font-size: 1em;
+}
+
+.landing-socials {
+  width: 33%;
+  padding: 2em;
+  display: flex;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.fab-icon {
+  transform: translateX(-50%);
+  background-color: #959695;
+}
+
+.close-icon {
+  color: white;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  font-size: 2em;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#fab-img-icon {
+  height: 1em;
+}
+
+.fab-nav {
+  width: 80%;
+  padding: 1em;
+  border-radius: 2em;
+  background: #49494980;
+  padding-right: 2em;
+  transition: 0.5s;
+}
+
+.fab-nav-icons-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.fab-nav-icon {
+  font-size: 1.2em;
+  color: white;
+  cursor: pointer;
+  transition: 0.5 ease-in-out;
+}
+
+.fab-nav-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Partices Stuff */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+  background-position: 50% 50%;
+  z-index: 5;
+}
+
+@media only screen and (max-width: 500px) {
+  .landing-nav-bar {
+    height: 15vh;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+
+  .landing-logo {
+    text-align: center;
+  }
+
+  #landing-menu-icon {
+    width: 1.5em;
+    height: 1.5em;
+  }
+
+  #landing-main-logo {
+    width: 75%;
+  }
+
+  .landing-left-menu {
+    padding: 0;
+    text-align: center;
+    width: 4em;
+  }
+
+  .landing-right-menu {
+    padding: 0;
+    width: 4em;
+  }
+
+  .fab-icon {
+    width: 1.75em;
+    height: 1.75em;
+  }
+
+  .landing-right-menu-list {
+    width: 100vw;
+    padding-right: 1em !important;
+    font-size: 1.5em;
+  }
+
+  .landing-title {
+    font-size: 1.5em;
+  }
+
+  #metaverse-link {
+    font-size: 1em;
+    width: 70%;
+  }
+
+  .landing-footer {
+    flex-direction: column-reverse;
+  }
+
+  .landing-credits {
+    width: 100%;
+    padding: 1em;
+    text-align: center;
+  }
+
+  .landing-socials {
+    width: 100%;
+    padding: 1em;
+    padding-right: 0;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 700px) {
+  .landing-title {
+    font-size: 2.5em;
+  }
+
+  .landing-socials {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 1200px) {
+  .landing-title {
+    font-size: 3em;
+  }
+
+  .landing-socials {
+    width: 50%;
+  }
+}
